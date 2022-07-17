@@ -1,7 +1,11 @@
 <html>
 <body>
-    @foreach($projects as $project)
-        {{$project->title}}
-    @endforeach
+    @forelse($projects as $project)
+        <div>
+            <a href="/projects/{{$project->id}}">{{$project->title}}</a>
+        </div>
+    @empty
+        No projects yet.
+    @endforelse
 </body>
 </html>
